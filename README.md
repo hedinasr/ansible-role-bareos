@@ -1,6 +1,7 @@
 Ansible Role: Bareos
 =========
 [![Build Status](https://travis-ci.org/Ananasr/ansible-role-bareos.svg?branch=master)](https://travis-ci.org/Ananasr/ansible-role-bareos)
+
 Installs Bareos on RedHat/CentOS, Debian/Ubuntu servers.
 
 Requirements
