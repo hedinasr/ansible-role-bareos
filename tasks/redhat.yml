@@ -1,0 +1,25 @@
+---
+- name: RedHat | repository - add the GPG key
+  rpm_key:
+    state: present
+    key: '{{ bareos_rpm_key }}'
+
+- name: RedHat | add repository to install Bareos from
+  yum_repository:
+    name: '{{ bareos_yum_repo_name }}'
+    description: Bareos YUM repo
+    baseurl: '{{ bareos_yum_repo_baseurl }}'
+
+- name: RedHat | install packages
+  yum:
+    name: '{{ item }}'
+    state: installed
+    update_cache: yes
+  with_items: '{{ bareos_packages }}'
+
+#- name: RedHat | start and enable Bareos services
+#  service:
+#    name: '{{ item }}'
+#    state: started
+#    enabled: yes
+#  with_items: '{{ bareos_services }}'

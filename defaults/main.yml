@@ -1,0 +1,26 @@
+---
+# defaults file for test-role-docker
+bareos_ppa_repo: 'deb http://download.bareos.org/bareos/release/latest/Debian_{{ ansible_distribution_major_version }}.0/ /'
+bareos_ppa_key: 'http://download.bareos.org/bareos/release/latest/Debian_{{ ansible_distribution_major_version }}.0/Release.key'
+bareos_ppa_key_id: '0143857D9CE8C2D182FE2631F93C028C093BFBA2'
+bareos_rpm_key: 'http://download.bareos.org/bareos/release/latest/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}/repodata/repomd.xml.key'
+bareos_yum_repo_name: 'bareos'
+bareos_yum_repo_baseurl: 'http://download.bareos.org/bareos/release/latest/{{ ansible_distribution }}_{{ ansible_distribution_major_version }}'
+bareos_packages:
+  - bareos-common
+  - bareos-filedaemon
+  - bareos-filedaemon-glusterfs-plugin
+  - bareos-storage
+  - bareos-storage-fifo
+  - bareos-storage-glusterfs
+  - bareos-storage-tape
+  - bareos-director
+  - bareos-database-common
+  - bareos-database-mysql
+  - bareos-database-tools
+  - bareos-bconsole
+  - bareos-webui
+bareos_services:
+  - bareos-fd
+  - bareos-sd
+  - bareos-dir

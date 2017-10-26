@@ -1,0 +1,25 @@
+---
+- name: Debian | repository - add the GPG key
+  apt_key:
+    url: '{{ bareos_ppa_key }}'
+    id: '{{ bareos_ppa_key_id }}'
+    state: present
+
+- name: Debian | add repository to install Bareos from
+  apt_repository:
+    repo: '{{ bareos_ppa_repo }}'
+    update_cache: yes
+
+- name: Debian | install packages
+  apt:
+    pkg: '{{ item }}'
+    state: installed
+    update_cache: yes
+  with_items: '{{ bareos_packages }}'
+
+#- name: Debian | start Bareos services
+#  service:
+#    name: '{{ item }}'
+#    state: started
+#    #enabled: yes
+#  with_items: '{{ bareos_services }}'
