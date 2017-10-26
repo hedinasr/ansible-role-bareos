@@ -34,8 +34,8 @@ MIT
 Todo
 ----
 
-[ ] Install and configure MySQL server.
-[ ] Start and enable Bareos services.
+- [ ] Install and configure MySQL server.
+- [ ] Start and enable Bareos services.
 
 Author Information
 ------------------
