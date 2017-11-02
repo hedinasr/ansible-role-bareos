@@ -10,7 +10,9 @@ platforms:
   - name: debian
     image: debian:8
   - name: centos
-    image: centos:7
+    image: centos/systemd
+    privileged: True
+    command: /sbin/init
 provisioner:
   name: ansible
   lint:

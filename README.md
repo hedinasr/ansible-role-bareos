@@ -24,7 +24,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: ananasr.mysql }
+         - { role: ananasr.bareos }
 
 License
 -------
